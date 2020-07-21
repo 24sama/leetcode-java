@@ -53,9 +53,11 @@ public class AppearanceSeries {
         if (lastStr.length() == 0){
             return "";
         }
+
+        StringBuilder s = new StringBuilder();
         int num = repeatNum(lastStr);
         // 下一行字符串的构造规律是： 上一行字符串的一个重复数字个数 + 上一行字符串的重复数字的值 + 之后的字符串
-        return num + "" + lastStr.charAt(0) + nextStr(lastStr.substring(num));
+        return s.append(num).append(lastStr.charAt(0)).append(nextStr(lastStr.substring(num))).toString();
     }
 
     /**
