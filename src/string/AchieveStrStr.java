@@ -1,3 +1,5 @@
+package string;
+
 /**
  * 实现 strStr() 函数。
  * <p>
@@ -15,7 +17,7 @@
  * <p>
  * 对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与C语言的 strstr() 以及 Java的 indexOf() 定义相符。
  */
-public class achieveStrStr {
+public class AchieveStrStr {
 
     public static void main(String[] args) {
         String h1 = "hello";
