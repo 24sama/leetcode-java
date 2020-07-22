@@ -24,7 +24,7 @@ public class RemoveNthNodeFromEndOfList {
         traverseNode(head);
         System.out.println();
 
-        ListNode list = removeNthFromEnd(head, 5);
+        ListNode list = removeNthFromEnd2(head, 5);
         traverseNode(list);
     }
 
@@ -82,6 +82,25 @@ public class RemoveNthNodeFromEndOfList {
         }
 
         first.next = first.next.next;
+        return dummy.next;
+    }
+
+    //双指针一次遍历
+    public static ListNode removeNthFromEnd2(ListNode head, int n) {
+        // 添加一个哑巴节点作为头节点
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode slow = dummy;
+        ListNode fast = dummy;
+        for (int i = 0; i < n+1; i++) {
+            fast = fast.next;
+        }
+
+        while (fast != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
         return dummy.next;
     }
 }
