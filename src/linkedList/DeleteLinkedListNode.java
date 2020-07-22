@@ -27,13 +27,13 @@ public class DeleteLinkedListNode {
         addNode(node1, 1);
         addNode(node1, 9);
 
-        bianliNode(node1);
+        traverseNode(node1);
         ListNode wantNode = getNode(node1, 9);
 
         System.out.println();
 
         deleteNode(wantNode);
-        bianliNode(node1);
+        traverseNode(node1);
     }
 
     static class ListNode {
@@ -45,7 +45,7 @@ public class DeleteLinkedListNode {
         }
     }
 
-    public static void bianliNode(ListNode node){
+    public static void traverseNode(ListNode node){
         while (node != null) {
             System.out.print(node.val + "->");
             node = node.next;
