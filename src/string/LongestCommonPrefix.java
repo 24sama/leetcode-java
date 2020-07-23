@@ -26,9 +26,13 @@ public class LongestCommonPrefix {
         System.out.println(longestCommonPrefix(strs));
         System.out.println(longestCommonPrefix(strs2));
         System.out.println(longestCommonPrefix(strs3));
+
+        System.out.println(longestCommonPrefix2(strs));
+        System.out.println(longestCommonPrefix2(strs2));
+        System.out.println(longestCommonPrefix2(strs3));
     }
 
-    // 扫描法
+    // 横向扫描法
     public static String longestCommonPrefix(String[] strs) {
         if (strs.length == 0){
             return "";
@@ -46,5 +50,23 @@ public class LongestCommonPrefix {
             }
         }
         return s;
+    }
+
+    // 纵向扫描
+    public static String longestCommonPrefix2(String[] strs){
+        if (strs.length == 0 || strs == null) {
+            return "";
+        }
+        int length = strs[0].length();
+        int count = strs.length;
+        for (int i=0;i<length;i++){
+            char c = strs[0].charAt(i);
+            for (int j=1;j<count;j++){
+                if (i == strs.length || strs[j].charAt(i) != c){
+                    return strs[0].substring(0, i);
+                }
+            }
+        }
+        return strs[0];
     }
 }
