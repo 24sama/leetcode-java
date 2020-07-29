@@ -38,7 +38,7 @@ public class ReverseList {
         return dummy;
     }
 
-    static class ListNode {
+    private static class ListNode {
         private int val;
         private ListNode next;
 
@@ -47,14 +47,14 @@ public class ReverseList {
         }
     }
 
-    public static void traverseNode(ListNode node){
+    private static void traverseNode(ListNode node){
         while (node != null) {
             System.out.print(node.val + "->");
             node = node.next;
         }
     }
 
-    public static void addNode(ListNode node, int val) {
+    private static void addNode(ListNode node, int val) {
         ListNode newNode = new ListNode(val);
         while (node.next != null) {
             node = node.next;
