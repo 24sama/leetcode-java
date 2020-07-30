@@ -42,6 +42,7 @@ public class MergeTwoOrderedLinkedLists {
         if (l2 == null) {
             return l1;
         }
+        // dummy = move游标，start = 链表开头的哑节点
         ListNode dummy = new ListNode(0), start = dummy;
         while (l1 != null && l2 != null){
             if (l1.val > l2.val){
@@ -54,6 +55,7 @@ public class MergeTwoOrderedLinkedLists {
                 l1 = l1.next;
             }
         }
+        // 没用完的元素需要继续拼接
         if (l1 == null) {
             dummy.next = l2;
         }else {
