@@ -1,5 +1,8 @@
 package linkedList;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 环形链表
  * 给定一个链表，判断链表中是否有环。
@@ -20,11 +23,66 @@ package linkedList;
  */
 public class HasCycleLinkedList {
     public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        addNode(head, 2);
+        head.next.next = head;
+        System.out.println(hasCycle(head));
 
+        ListNode head2 = new ListNode(3);
+        addNode(head2, 2);
+        addNode(head2, 0);
+        addNode(head2, -4);
+        head2.next.next.next.next = head2.next;
+        System.out.println(hasCycle(head2));
+
+        ListNode head3 = new ListNode(1);
+        addNode(head3, 2);
+        head3.next.next = head3;
+        System.out.println(hasCycle2(head3));
+
+        ListNode head4 = new ListNode(3);
+        addNode(head4, 2);
+        addNode(head4, 0);
+        addNode(head4, -4);
+        head4.next.next.next.next = head4.next;
+        System.out.println(hasCycle2(head4));
     }
+
     public static boolean hasCycle(ListNode head) {
-        return true;
+        // 双指针
+        if (head == null) {
+            return false;
+        }
+        // 快慢指针遍历
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow) {
+                return true;
+            }
+        }
+        return false;
     }
+
+    public static boolean hasCycle2(ListNode head) {
+        // hashmap法
+        if (head == null) {
+            return false;
+        }
+
+        Map<ListNode, ListNode> map = new HashMap<>();
+        while (head.next != null) {
+            if (map.containsKey(head)) {
+                return true;
+            }
+            map.put(head, head);
+            head = head.next;
+        }
+        return false;
+    }
+
     private static class ListNode {
         private int val;
         private ListNode next;
