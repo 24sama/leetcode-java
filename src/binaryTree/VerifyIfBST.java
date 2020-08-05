@@ -37,6 +37,14 @@ public class VerifyIfBST {
         Integer[] str2 = {10,5,15,null,null,6,20};
         TreeNode root2 = bfsCreate(str2);
         System.out.println(isValidBST(root2));
+
+        Integer[] str3 = {2,1,3};
+        TreeNode root3 = bfsCreate(str3);
+        System.out.println(isValidBST2(root3));
+
+        Integer[] str4 = {10,5,15,null,null,6,20};
+        TreeNode root4 = bfsCreate(str4);
+        System.out.println(isValidBST2(root4));
     }
 
     public static boolean isValidBST(TreeNode root) {
@@ -68,6 +76,28 @@ public class VerifyIfBST {
             return false;
         }
         return true;
+    }
+
+    static long pre = Long.MIN_VALUE;
+    public static boolean isValidBST2(TreeNode root) {
+        // 中序遍历 二叉搜索树 中序遍历结果一定是升序序列
+        if (root == null) {
+            return true;
+        }
+
+        // 访问左子树
+        if (!isValidBST2(root.left)) {
+            return false;
+        }
+
+        // 访问当前节点
+        if (root.val <= pre) {
+            return false;
+        }
+        pre = root.val;
+
+        // 访问右子树
+        return isValidBST2(root.right);
     }
 
     static class TreeNode {
