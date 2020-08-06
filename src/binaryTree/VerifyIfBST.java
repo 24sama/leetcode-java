@@ -38,13 +38,9 @@ public class VerifyIfBST {
         TreeNode root2 = bfsCreate(str2);
         System.out.println(isValidBST(root2));
 
-        Integer[] str3 = {2,1,3};
-        TreeNode root3 = bfsCreate(str3);
-        System.out.println(isValidBST2(root3));
+        System.out.println(isValidBST2(root));
 
-        Integer[] str4 = {10,5,15,null,null,6,20};
-        TreeNode root4 = bfsCreate(str4);
-        System.out.println(isValidBST2(root4));
+        System.out.println(isValidBST2(root2));
     }
 
     public static boolean isValidBST(TreeNode root) {
