@@ -17,6 +17,7 @@ public class LevelOrderBinaryTree {
     }
 
     public static List<List<Integer>> levelOrder(TreeNode root) {
+        // 队列 循环
         if (root == null) {
             return new ArrayList<>();
         }
