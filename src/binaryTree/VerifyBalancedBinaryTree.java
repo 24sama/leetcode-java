@@ -35,6 +35,7 @@ public class VerifyBalancedBinaryTree {
     }
 
     public static boolean isSymmetric(TreeNode root) {
+        // 递归
         if (root == null) {
             return true;
         }
@@ -56,6 +57,7 @@ public class VerifyBalancedBinaryTree {
     }
 
     public static boolean isSymmetric2(TreeNode root) {
+        // 队列 循环
         if (root == null) {
             return true;
         }
