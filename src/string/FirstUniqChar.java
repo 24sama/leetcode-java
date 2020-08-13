@@ -1,5 +1,8 @@
 package string;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 387. 字符串中的第一个唯一字符
  *
@@ -18,22 +21,26 @@ public class FirstUniqChar {
         String s = "loveleetcode";
         int result = FirstUniqChar(s);
         System.out.println(result);
+
+        String s2 = "leetcode";
+        int result2 = FirstUniqChar2(s2);
+        System.out.println(result2);
     }
 
-    //    public static int FirstUniqChar(String s) {
-//        char[] chars = s.toCharArray();
-//        Map<Character, Integer> map = new HashMap<>();
-//        for (int i = 0; i < chars.length; i++) {
-//            map.put(chars[i], map.getOrDefault(chars[i], 0) + 1);
-//        }
-//
-//        for (int i = 0; i < chars.length; i++) {
-//            if (map.get(chars[i]) == 1) {
-//                return i;
-//            }
-//        }
-//        return -1;
-//    }
+    public static int FirstUniqChar2(String s) {
+        char[] chars = s.toCharArray();
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < chars.length; i++) {
+            map.put(chars[i], map.getOrDefault(chars[i], 0) + 1);
+        }
+
+        for (int i = 0; i < chars.length; i++) {
+            if (map.get(chars[i]) == 1) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
     public static int FirstUniqChar(String s) {
         // 因为只会出现小写字母，所以仅需26位
