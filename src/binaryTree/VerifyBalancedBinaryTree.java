@@ -31,6 +31,7 @@ public class VerifyBalancedBinaryTree {
         TreeNode root2 = bfsCreate(str2);
         System.out.println(isSymmetric(root2));
 
+        System.out.println(isSymmetric2(root));
         System.out.println(isSymmetric2(root2));
     }
 
@@ -65,8 +66,8 @@ public class VerifyBalancedBinaryTree {
         queue.add(root.left);
         queue.add(root.right);
         while (queue.size()>0) {
-            TreeNode left = queue.removeFirst();
-            TreeNode right = queue.pollFirst();
+            TreeNode left = queue.poll();
+            TreeNode right = queue.poll();
             if (left == null && right == null) {
                 continue;
             }

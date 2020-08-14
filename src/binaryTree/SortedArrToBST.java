@@ -47,6 +47,7 @@ public class SortedArrToBST {
         return node;
     }
 
+    // 层序遍历
     public static List<List<Integer>> levelOrder(TreeNode root) {
         // 队列 循环
         if (root == null) {
