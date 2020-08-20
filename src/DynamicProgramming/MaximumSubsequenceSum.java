@@ -18,6 +18,8 @@ public class MaximumSubsequenceSum {
         System.out.println(maxSubArray(nums));
 
         System.out.println(maxSubArray2(nums));
+
+        System.out.println(maxSubArray3(nums));
     }
 
     /**
@@ -65,6 +67,47 @@ public class MaximumSubsequenceSum {
      * 分治算法
      */
     public static int maxSubArray3(int[] nums) {
-        return 0;
+        if(nums == null || nums.length<=0){
+            return 0;
+        }
+        return get(nums,0,nums.length-1).mSum;
+    }
+
+    // 维护一个[l,r]的区间
+    public static class node {
+        //[l,r]内以l为左端点的最大子段和
+        int lSum;
+        //[l,r]内以r为右端点的最大子段和
+        int rSum;
+        //[l,r]内的最大子段和
+        int mSum;
+        //[l,r]的区间和
+        int iSum;
+
+        public node(int l,int r,int m,int i){
+            this.lSum = l;
+            this.rSum = r;
+            this.mSum = m;
+            this.iSum = i;
+        }
+    }
+
+    public static node get(int[] a, int l, int r) {
+        if (l==r) {
+            return new node(a[l], a[l], a[l], a[l]);
+        }
+
+        int m = (l+r)/2;
+        node left = get(a, l, m);
+        node right = get(a, m+1, r);
+        return pushUp(left, right);
+    }
+
+    public static node pushUp(node left, node right) {
+        int lSum = Math.max(left.lSum, left.iSum+right.lSum);
+        int rSum = Math.max(right.rSum, right.iSum+left.rSum);
+        int mSum = Math.max(left.rSum+right.lSum, Math.max(left.mSum, right.mSum));
+        int iSum = left.iSum+right.iSum;
+        return new node(lSum,rSum,mSum,iSum);
     }
 }
