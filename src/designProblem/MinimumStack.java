@@ -1,5 +1,7 @@
 package designProblem;
 
+import java.util.Stack;
+
 /**
  * 最小栈
  * 设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
@@ -28,30 +30,49 @@ package designProblem;
  */
 public class MinimumStack {
     public static void main(String[] args) {
-
+        MinStack minStack = new MinStack();
+        minStack.push(0);
+        minStack.push(1);
+        minStack.push(0);
+        System.out.println(minStack.getMin());
+        minStack.pop();
+        System.out.println(minStack.top());
+        System.out.println(minStack.getMin());
     }
 
     public static class MinStack {
+        private Stack<Integer> mainStarck;
+        private Stack<Integer> helpStack;
 
-        /** initialize your data structure here. */
+
+        /**
+         * 辅助栈解法
+         */
         public MinStack() {
-
+            this.mainStarck = new Stack<>();
+            this.helpStack = new Stack<>();
         }
 
         public void push(int x) {
-
+            this.mainStarck.push(x);
+            if (this.helpStack.isEmpty() || this.helpStack.peek() >= x) {
+                this.helpStack.push(x);
+            }
         }
 
         public void pop() {
-
+            Integer res = this.mainStarck.pop();
+            if (!this.helpStack.isEmpty() && this.helpStack.peek().equals(res)) {
+                this.helpStack.pop();
+            }
         }
 
         public int top() {
-
+            return this.mainStarck.peek();
         }
 
         public int getMin() {
-
+            return this.helpStack.peek();
         }
     }
 }
