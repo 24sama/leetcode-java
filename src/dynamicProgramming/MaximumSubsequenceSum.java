@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package dynamicProgramming;
 
 /**
  * 最大子序和

@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package dynamicProgramming;
 
 /**
  * 爬楼梯

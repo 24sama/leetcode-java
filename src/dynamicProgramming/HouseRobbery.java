@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package dynamicProgramming;
 
 /**
  * 打家劫舍

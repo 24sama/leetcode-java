@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package dynamicProgramming;
 
 /**
  * 买卖股票的最佳时机
