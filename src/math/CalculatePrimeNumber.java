@@ -41,8 +41,10 @@ public class CalculatePrimeNumber {
 
     /**
      * 厄拉多塞筛法
+     * 本质是从小的数字开始遍历，并将该数的所有倍数标识为不是质数，当之后遍历到这些倍数时就直接忽略进行下次循环
      */
     public static int countPrimes2(int n) {
+        // 初始化一个长度为n的数组 用于判断数组下标处的数字是否为质数
         // 布尔数组初始化默认值为false
         boolean[] arr = new boolean[n];
         int count = 0;
