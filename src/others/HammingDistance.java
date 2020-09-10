@@ -32,9 +32,6 @@ public class HammingDistance {
     /**
      * X^y后得到的数就包含了x与y所有不同的二进制位 再遍历int类型长度检查最右位是否为1
      * 取模运算（i%2）和AND操作（i&1）都可以屏蔽最右位以外的位
-     * @param x
-     * @param y
-     * @return
      */
     public static int hammingDistance(int x, int y) {
         int xory = x^y;
@@ -54,9 +51,6 @@ public class HammingDistance {
      * x       = 10001000
      * x-1     = 10000111
      * x&(x-1) = 10000000
-     * @param x
-     * @param y
-     * @return
      */
     public static int hammingDistance2(int x, int y) {
         int xory = x^y;

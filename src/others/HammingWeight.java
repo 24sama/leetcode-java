@@ -38,8 +38,6 @@ public class HammingWeight {
     /**
      * 布赖恩·克尼根算法
      * 每次消去最右边的1，直到消完为止
-     * @param n
-     * @return
      */
     public static int hammingWeight(int n) {
         int count = 0;
@@ -51,8 +49,6 @@ public class HammingWeight {
 
     /**
      * 把n往右移32次，每次都和1进行与运算
-     * @param n
-     * @return
      */
     public static int hammingWeight2(int n) {
         int count = 0;

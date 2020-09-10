@@ -35,8 +35,6 @@ public class PowerOfThree {
 
     /**
      * 递归
-     * @param n
-     * @return
      */
     public static boolean isPowerOfThree(int n) {
         if (n == 1) {
