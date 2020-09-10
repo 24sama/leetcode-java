@@ -36,6 +36,7 @@ public class HammingWeight {
     }
 
     /**
+     * 布赖恩·克尼根算法
      * 每次消去最右边的1，直到消完为止
      * @param n
      * @return
