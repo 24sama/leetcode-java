@@ -32,11 +32,11 @@ public class TwoSum {
             return null;
         }
         Map<Integer, Integer> map = new HashMap<>();
-        int anothor = 0;
+        int another = 0;
         for (int i=0;i<nums.length;i++) {
-            anothor = target - nums[i];
-            if (map.containsKey(anothor)) {
-                return new int[]{map.get(anothor), i};
+            another = target - nums[i];
+            if (map.containsKey(another)) {
+                return new int[]{map.get(another), i};
             }
             map.put(nums[i], i);
         }
