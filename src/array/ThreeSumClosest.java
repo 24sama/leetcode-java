@@ -34,16 +34,18 @@ public class ThreeSumClosest {
             while (left < right) {
                 int min = nums[i] + nums[left] + nums[left + 1];
                 // 若target已经小于当前循环最小值则跳出
-                if(target < min){
-                    if(Math.abs(target - closestNum) > Math.abs(target - min))
+                if (target < min) {
+                    if (Math.abs(target - closestNum) > Math.abs(target - min)) {
                         closestNum = min;
+                    }
                     break;
                 }
                 int max = nums[i] + nums[right] + nums[right - 1];
                 // 若target已经大于当前循环最大值则跳出
-                if(target > max){
-                    if(Math.abs(target - closestNum) > Math.abs(target - max))
+                if (target > max) {
+                    if (Math.abs(target - closestNum) > Math.abs(target - max)) {
                         closestNum = max;
+                    }
                     break;
                 }
 
