@@ -64,7 +64,7 @@ public class CombinationSum {
             combine.add(candidates[i]);
             // 由于每个元素可以重复使用，所以下一轮起点仍然是i
             dfs(candidates, i, target - candidates[i], combine, res);
-            // 删除最后一个 即状态重置
+            // 删除最后一个 即状态重置 深度优先遍历有回头的过程，因此递归之前做了什么，递归之后需要做相同操作的逆向操作
             combine.remove(combine.size() - 1);
         }
     }
