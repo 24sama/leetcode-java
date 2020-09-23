@@ -63,7 +63,7 @@ public class LetterCombinationOfPhoneNumber {
      * 回溯+map
      */
     public static List<String> letterCombinations2(String digits) {
-        String letterMap[] = {
+        String[] letterMap = {
             " ",
             "",
             "abc",
