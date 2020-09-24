@@ -60,7 +60,8 @@ public class LetterCombinationOfPhoneNumber {
     }
 
     /**
-     * 回溯+map
+     * 回溯
+     * leetcode题解写法
      */
     public static List<String> letterCombinations2(String digits) {
         String[] letterMap = {
