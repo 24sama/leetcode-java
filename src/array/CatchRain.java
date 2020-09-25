@@ -52,7 +52,7 @@ public class CatchRain {
      */
     public static int trap2(int[] height) {
         int res = 0;
-        // 最两端的列不用考虑，一定不会有水。所以小标从1到length-2
+        // 最两端的列不用考虑，一定不会有水。所以下标从1到length-2
         for (int i = 1; i < height.length - 1; i++) {
             //找出左边最高
             int maxleft = 0;
