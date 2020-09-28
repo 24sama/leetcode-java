@@ -53,6 +53,7 @@ public class CombinationSumIV {
 
     /**
      * dp
+     * dp[i] ：对于给定的由正整数组成且不存在重复数字的数组，和为 i 的组合的个数。
      * 在 0 这一点，我们定义 dp[0] = 1 的，它表示如果 nums 里有一个数恰好等于 target，它单独成为 1 种可能。
      * dp[i]= dp[i - nums[0]] + dp[i - nums[1]] + dp[i - nums[2]] + ... （当 [] 里面的数 >= 0）
      * dp[i] = sum{dp[i - num] for num in nums and if i >= num}
