@@ -64,7 +64,7 @@ public class TwoSum {
                     }
                 }
                 for (int k=0;k<nums.length;k++) {
-                    if (oldNums[k] == nums[end]) {
+                    if (oldNums[k] == nums[end] && k != i) {
                         j=k;
                         break;
                     }
